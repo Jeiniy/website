@@ -9,7 +9,8 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<!-- 選單 -->
+<body>
+    <!-- 選單 -->
 <header>
     <nav class="navbar">
          <div class="menu-toggle" id="mobile-menu">
@@ -29,22 +30,67 @@
      </nav>
 </header>
 <table class="custom-table">
-    
     <tr>
         <td>
             <div class="button-group">
-                <button class="card-button">家人資訊</button>
+                <button class="card-button">設定/修改家人資訊</button>
                 <button class="card-button">危險偵測</button>
                 <button class="card-button">時程安排</button>
                 <button class="card-button">觀看影像</button>
             </div>
+            <div class="dashboard-bottom">
+                <div class="chart-box">
+                    <h3>狀況追蹤</h3>
+                    <img src="" alt="Chart" style="width: 100%; height: auto;">
+                </div>
+                <div class="status-box">
+                    <h3 style="text-align: center;">心情追蹤</h3>
+                    <div class="status-table">
+                        <div class="status-row header">
+                            <div style="text-align: left;"></div>
+                            <div style="text-align: left;">狀態</div>
+                            <div style="text-align: left" >占比</div>
+                            <div >趴數</div>
+                        </div>
+                        <div class="status-row">
+                            <div></div>
+                            <div style="text-align: left;">
+                                <button class="status-button" > 01 &#128513;開心</button>
+                            </div>
+                            <div><div class="bar blue" style="width: 45%;"></div></div>
+                            <div>45%</div>
+                        </div>
+                        <div class="status-row">
+                            <div></div>
+                            <div>
+                                <button class="status-button"> 02 &#128524; 平靜</button>
+                            </div>
+                            <div><div class="bar green" style="width: 29%;"></div></div>
+                            <div>29%</div>
+                        </div>
+                        <div class="status-row">
+                            <div></div>
+                            <div>
+                                <button class="status-button"> 03 &#128557; 難過</button>
+                            </div>
+                            <div><div class="bar purple" style="width: 18%;"></div></div>
+                            <div>18%</div>
+                        </div>
+                        <div class="status-row">
+                            <div></div>
+                            <div>
+                                <button class="status-button"> 04 &#128544; 生氣</button> 
+                            </div>
+                            <div><div class="bar orange" style="width: 25%;"></div></div>
+                            <div>25%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </td>
     </tr>
-    
 </table>
-
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

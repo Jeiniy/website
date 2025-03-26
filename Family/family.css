@@ -1,0 +1,99 @@
+/* 設定導覽列 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    flex: 1;
+    text-align: left;
+    margin-left: 20px;
+    position: relative;
+    top: 5px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    position: relative;
+    top: 10px;
+    flex-wrap: wrap; /* 讓其中一項可以換行 */
+    justify-content: center;
+}
+
+.nav-list li {
+    margin: 0 15px;
+    white-space: nowrap;
+}
+
+
+
+.nav-list a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.menu-toggle .bar {
+    background-color: black;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+}
+body {
+    background-image: url('/Family/image/bg.png'); /* 根據你背景圖位置調整路徑 */
+    background-size: cover;       /* 讓背景圖自動撐滿整個區塊 */
+    background-position: center;  /* 讓圖片置中 */
+    background-repeat: no-repeat; /* 不要重複出現 */
+    min-height: 320vh;            /* 至少畫面高度要滿一整頁 */
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 兩欄等寬 */
+    gap: 20px 40px; /* row-gap 和 column-gap */
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .form-full {
+    grid-column: 1 / -1; /* 跨兩欄 */
+  }
+  .form-title {
+    margin-top: 50px; /* 調整這裡數值改變位置 */
+  }
