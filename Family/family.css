@@ -71,29 +71,87 @@ body {
     min-height: 320vh;            /* 至少畫面高度要滿一整頁 */
   }
 
-  form {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 兩欄等寬 */
-    gap: 20px 40px; /* row-gap 和 column-gap */
-    max-width: 800px;
-    margin: auto;
+  .form-wrapper {
+    max-width: 1000px;
+    margin: 60px auto; /* 整體置中 */
+    padding: 20px;
   }
 
+  .form-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left; /* 靠左 */
+  }
+  
+  .form-area {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
   .form-group {
     display: flex;
-    flex-direction: column;
-  }
-
-  .radio-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
     align-items: center;
   }
-
-  .form-full {
-    grid-column: 1 / -1; /* 跨兩欄 */
+  
+  .form-group label {
+    width: 60px;
+    margin-right: 10px;
+    white-space: nowrap;
   }
-  .form-title {
-    margin-top: 50px; /* 調整這裡數值改變位置 */
+  
+  input[type="text"] {
+    flex: 1;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .radio-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .form-full {
+    grid-column: 1 / -1;
+  }
+
+  .form-full input[type="text"] {
+    width: 100%;
+    max-width: none; /* 取消限制長度 */
+  }
+  .checkbox-group {
+    display: flex;
+    gap: 10px 100px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 30px;
+    align-items: center;
+  }
+  .checkbox-group label {
+    display: inline-flex; /* ⬅ 原本是 flex，改成 inline-flex */
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .checkbox-group input[type="text"] {
+    width: 80px;
+    padding: 2px;
+    font-size: 1rem;
+    height: auto;
+  }
+
+  
+  .other-input {
+    margin-left: 5px;
+    width: 100px;
+    padding: 3px;
   }

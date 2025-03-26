@@ -29,13 +29,15 @@
         </ul>
     </nav>
 </header>
-<h2>輸入年長者資訊</h2>
-<form>
-    <!-- 第一列 -->
+<div class="form-wrapper">
+    <h2 class="form-title">輸入年長者資訊</h2>
+  <form class="form-area">
+
     <div class="form-group">
       <label>姓名:</label>
       <input type="text">
     </div>
+
     <div class="form-group">
       <label>性別:</label>
       <div class="radio-group">
@@ -43,23 +45,67 @@
         <label><input type="radio" name="gender"> 女性</label>
       </div>
     </div>
-  
-    <!-- 第二列 -->
+
+    
     <div class="form-group">
       <label>身高:</label>
       <input type="text">
     </div>
+
     <div class="form-group">
       <label>體重:</label>
       <input type="text">
     </div>
-  
-    <!-- 第三列（跨欄） -->
+
+    
     <div class="form-group form-full">
       <label>地址:</label>
       <input type="text">
     </div>
+
+    <div class="form-group">
+      <label>血型:</label>
+      <div class="radio-group">
+          <label><input type="radio" name="Type A"> A型</label>
+          <label><input type="radio" name="Type B"> B型</label>
+          <label><input type="radio" name="Type O"> O型</label>
+          <label><input type="radio" name="Type AB"> AB型</label>
+          <label>
+            <input type="radio" name="Type"> 其他:  
+            <input type="text" name="Type_other" class="other-input">
+          </label>
+        </div>
+    </div>
+
+    <div class="form-group form-full">
+      <label>慢性病:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="disease" value="diabetes"> 糖尿病</label>
+        <label><input type="checkbox" name="disease" value="hypertension"> 高血壓</label>
+        <label>
+          <input type="checkbox" name="disease" value="other"> 其他:
+          <input type="text" name="disease_other" class="other-input">
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group form-full">
+      <label>用藥狀況:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="medication" value="after_meal"> 三餐飯後</label>
+        <label><input type="checkbox" name="medication" value="before_meal"> 三餐飯前</label>
+        <label><input type="checkbox" name="medication" value="once_day"> 早晚各一次</label>
+        <label><input type="checkbox" name="medication" value="before_bed"> 睡前</label>
+        <label>
+          <input type="checkbox" name="medication" value="other"> 其他：
+          <input type="text" name="medication_other" class="other-input">
+        </label>
+      </div>
+    </div>
+
   </form>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
