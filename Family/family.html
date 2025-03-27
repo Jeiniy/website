@@ -18,19 +18,19 @@
          <span class="bar"></span>
          <span class="bar"></span>
        </div>
-         <h1 class="logo">陪伴型居家照護機器人</h1>
+         <h1 class="logo"><a href="/index/index.html">陪伴型居家照護機器人</a></h1>
 
         <ul class="nav-list">
-           <li><a><h4>上一頁</h4></a></li>
+           <li><a href="/UserHome/userhome.html"><h4>上一頁</h4></a></li>
            <li>|</li>
-           <li><a href="#"><img src="image/home.png"></a></li>
+           <li><a href="/index/index.html"><img src="image/home.png"></a></li>
            <li>|</li>
            <li><a href="#"><img src="image/user.png"></a></li>
         </ul>
     </nav>
 </header>
 <div class="form-wrapper">
-    <h2 class="form-title">輸入年長者資訊</h2>
+    <h1 class="form-title">輸入年長者資訊</h1>
   <form class="form-area">
 
     <div class="form-group">
@@ -60,10 +60,42 @@
     
     <div class="form-group form-full">
       <label>地址:</label>
-      <input type="text">
+      <div class="address-group">
+        <select id="county" name="county">
+          <option value="">請選擇縣市</option>
+          <option value="taipei">台北市</option>
+          <option value="New taipei ">新北市</option>
+          <option value="keelung">基隆市</option>
+          <option value="taoyuan">桃園市</option>
+          <option value="hsinchu">新竹市</option>
+          <option value="hsinchu_c">新竹縣</option>
+          <option value="kaohsiung">苗栗縣</option>
+          <option value="taichung">臺中市</option>
+          <option value="kaohsiung">彰化縣</option>
+          <option value="kaohsiung">南投縣</option>
+          <option value="kaohsiung">雲林縣</option>
+          <option value="kaohsiung">嘉義市</option>
+          <option value="kaohsiung">嘉義縣</option>
+          <option value="kaohsiung">臺南市</option>
+          <option value="kaohsiung">高雄市</option>
+          <option value="kaohsiung">屏東縣</option>
+          <option value="kaohsiung">宜蘭縣</option>
+          <option value="kaohsiung">花蓮縣</option>
+          <option value="kaohsiung">臺東縣</option>
+          <option value="kaohsiung">澎湖縣</option>
+          <option value="kaohsiung">金門縣</option>
+          <option value="kaohsiung">連江縣</option>
+        </select>
+    
+        <select id="district" name="district">
+          <option value="">請選擇區域</option>
+          
+        </select>
+        <input type="text" name="detailAddress" placeholder="請輸入街道或門牌號" />
+      </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group ">
       <label>血型:</label>
       <div class="radio-group">
           <label><input type="radio" name="Type A"> A型</label>
@@ -83,7 +115,7 @@
         <label><input type="checkbox" name="disease" value="diabetes"> 糖尿病</label>
         <label><input type="checkbox" name="disease" value="hypertension"> 高血壓</label>
         <label>
-          <input type="checkbox" name="disease" value="other"> 其他:
+          <input type="checkbox" name="disease" value="other"> 其他: 
           <input type="text" name="disease_other" class="other-input">
         </label>
       </div>
@@ -102,7 +134,30 @@
         </label>
       </div>
     </div>
-
+    <div class="form-group form-full">
+      <label>生活習慣:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="life"> 早睡</label>
+        <label><input type="checkbox" name="life"> 早起</label>
+        <label><input type="checkbox" name="life"> 晚睡</label>
+        <label><input type="checkbox" name="life"> 晚起</label>
+        <label><input type="checkbox" name="life"> 睡午覺</label>
+        <label><input type="checkbox" name="life"> 不睡午覺</label>
+      </div>
+    </div>
+    <div class="form-group form-full">
+      <label>興趣:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="interest">看電視</label>
+        <label><input type="checkbox" name="interest">下棋</label>
+        <label><input type="checkbox" name="interest">看報紙</label>
+        <label><input type="checkbox" name="interest">書</label>
+        <label>
+          <input type="checkbox" name="medication" value="other"> 其他：
+          <input type="text" name="medication_other" class="other-input">
+        </label>
+      </div>
+    </div>
   </form>
 </div>
 

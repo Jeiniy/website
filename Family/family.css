@@ -27,7 +27,13 @@
     position: relative;
     top: 5px;
 }
-
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: black;
+}
 .nav-list {
     list-style: none;
     display: flex;
@@ -63,6 +69,7 @@
     width: 25px;
     margin: 4px 0;
 }
+
 body {
     background-image: url('/Family/image/bg.png'); /* 根據你背景圖位置調整路徑 */
     background-size: cover;       /* 讓背景圖自動撐滿整個區塊 */
@@ -72,13 +79,13 @@ body {
   }
 
   .form-wrapper {
-    max-width: 1000px;
-    margin: 60px auto; /* 整體置中 */
-    padding: 20px;
+    max-width: 900px;
+    margin: 40px auto; /* 整體置中 */
+    padding: 5px 20px;
   }
 
   .form-title {
-    font-size: 24px;
+    font-size: 30px;
     margin-bottom: 20px;
     text-align: left; /* 靠左 */
   }
@@ -87,14 +94,15 @@ body {
     margin-top: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px 40px;
-    max-width: 800px;
+    gap: 20px 1px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
   }
   
   .form-group {
     display: flex;
+    gap: 2px;
     align-items: center;
   }
   
@@ -107,37 +115,34 @@ body {
   input[type="text"] {
     flex: 1;
     width: 100%;
-    max-width: 250px;
+    max-width: 165px;
   }
   
   .radio-group {
     display: flex;
-    gap: 15px;
+    flex-wrap: nowrap;
+    gap: 20px 5px;
     align-items: center;
   }
   
   .form-full {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /* 橫跨整欄，寬度變寬 */
   }
 
   .form-full input[type="text"] {
-    width: 100%;
-    max-width: none; /* 取消限制長度 */
+    width: 80%;
+    max-width: 600px; 
   }
-  .checkbox-group {
-    display: flex;
-    gap: 10px 100px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
+  
   .checkbox-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px 30px;
+    gap: 20px 40px;
     align-items: center;
   }
+
   .checkbox-group label {
-    display: inline-flex; /* ⬅ 原本是 flex，改成 inline-flex */
+    display: inline-flex; 
     align-items: center;
     white-space: nowrap;
   }
@@ -151,7 +156,25 @@ body {
 
   
   .other-input {
+    width: 80px !important;
+    padding: 2px;
+    font-size: 1rem;
+    height: auto;
     margin-left: 5px;
-    width: 100px;
-    padding: 3px;
   }
+
+  .address-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .address-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    width: 60%;
+  }
+  
