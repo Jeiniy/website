@@ -63,91 +63,86 @@
     width: 25px;
     margin: 4px 0;
 }
-
 body {
-    background-image: url('/Login/image/LoginPicture.png'); 
+    background-image: url('/SignUp/image/SignUpPicture.png');
     background-size: cover;       
     background-position: center;  
     background-repeat: no-repeat; 
-    min-height: 100vh; 
+    min-height: 100vh;            
   }
 
 
-  /* 白色登入表單區塊 */
-  .login-box {
-    position: absolute;
-    top: 55%;
-    left: 15%; 
-    transform: translateY(-60%);
+
+
+
+
+
+/* 表單區塊置中靠左 */
+.form-container {
     width: 400px;
-    padding: 50px 40px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
+    margin-top: 200px;
+    margin-left: 150px; 
+}
 
-/* Email 與 Password 輸入欄 */
-  .input-box {
-    width: 300px; 
-    margin: 0 auto 30px; 
+/* 欄位 */
+.form-row {
     display: flex;
     align-items: center;
-    background-color: #ddd;
-    border-radius: 25px;
-    padding: 10px 20px;
-  }
-  
-/* 信封圖示和鎖頭圖示 */
-  .input-box i {
+    margin-bottom: 25px;
+}
+
+.form-row label {
+    width: 100px;
     font-size: 20px;
+    color: #333;
     margin-right: 10px;
-  }  
-  
+    text-align: right;
+}
 
-  /* 輸入 Email 和 Password 的文字欄位 */
-  .input-box input {
-    border: none;
-    background: transparent;
-    outline: none;
+/* 輸入底線 */
+.form-row input {
     flex: 1;
-    font-size: 15px;
-    padding: 12px 10px;
-  }
-
-  
-  /* 註冊和登入 按鈕區 */
-  .btn-group {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    width: 300px;
-    margin: 0 auto;
-    margin-top: 20px;
-  }
-  
-  
-  
-
-  /* 按鈕的外觀 */
-  .btn {
-    width: 120px;
-    padding: 12px 0;
     border: none;
-    border-radius: 999px !important;
+    border-bottom: 2px solid #555;
+    background-color: transparent;
+    outline: none;
+    font-size: 18px;
+    padding: 5px 0;
+    color: #333;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.form-row input::placeholder {
+    color: #aaa;
+}
+
+/* 註冊按鈕區 */
+.btn-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+.btn.register {
+    background-color: #ae6c45;
+    color: white;
+    border: none;
+    padding: 12px 40px;
     font-size: 16px;
+    border-radius: 999px;
     cursor: pointer;
-  }
-  
-  
-  /* 註冊按鈕顏色 */
-  .btn.register {
-    background-color: #ae6c45;
-    color: white;
-  }
-  /* 登入按鈕顏色 */
-  .btn.login {
-    background-color: #ae6c45;
-    color: white;
-  }
-  
+    transition: background-color 0.3s ease;
+    width: 100%;     
+    max-width: 150px;        
+    text-align: center;
+    display: inline-block;
+
+}
+
+.btn.register:hover {
+    background-color: #935b39;
+}
+
