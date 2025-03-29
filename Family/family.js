@@ -9,7 +9,6 @@ menuToggle.addEventListener("click", function () {
     navList.classList.toggle("active"); // 切換「active」類別，控制選單顯示與隱藏
 });
 
-
   const districtData = {
     taipei:["中正區","中正區","內湖區", "大安區", "信義區", "士林區", "北投區","內湖區","南港區","大同區","文山區","松山區","萬華區"],
     newtaipei:["三峽區","三芝區","三重區","中和區","五股區","八里區","土城區","坪林區","平溪區","新店區","新莊區","板橋區","林口區","樹林區","永和區","汐止區","泰山區","淡水區","深坑區","烏來區","瑞芳區","石碇區","石門區","萬里區","蘆洲區","貢寮區","金山區","雙溪區","鶯歌區"],
@@ -33,35 +32,60 @@ menuToggle.addEventListener("click", function () {
     penghu:["馬公市", "湖西鄉", "白沙鄉", "西嶼鄉", "望安鄉", "七美鄉"],
     kinmen:["金城鎮", "金沙鎮", "金湖鎮", "金寧鄉", "烈嶼鄉", "烏坵鄉"],
     lienchiang:["南竿鄉", "北竿鄉", "莒光鄉", "東引鄉"],
-
-
-
-
-
-
   };
 
-  const countySelect = document.getElementById("county");
-  const districtSelect = document.getElementById("district");
+  const sets = [
+    { countyId: "county", districtId: "district" },
+    { countyId: "county1", districtId: "district1" },
+    { countyId: "county2", districtId: "district2" }
+  ];
 
-  countySelect.addEventListener("change", function () {
-    const selectedCounty = this.value;
-
-    // 清空舊的區域選項
-    districtSelect.innerHTML = "";
-
-    if (selectedCounty && districtData[selectedCounty]) {
-      // 加入新的選項
-      districtData[selectedCounty].forEach(district => {
+  sets.forEach(set => {
+    const countySelect = document.getElementById(set.countyId);
+    const districtSelect = document.getElementById(set.districtId);
+  
+    countySelect.addEventListener("change", function () {
+      const selectedCounty = this.value;
+  
+      // 清空舊的區域選項
+      districtSelect.innerHTML = "";
+  
+      if (selectedCounty && districtData[selectedCounty]) {
+        // 加入新的選項
+        districtData[selectedCounty].forEach(district => {
+          const option = document.createElement("option");
+          option.value = district;
+          option.textContent = district;
+          districtSelect.appendChild(option);
+        });
+      } else {
         const option = document.createElement("option");
-        option.value = district;
-        option.textContent = district;
+        option.textContent = "請先選擇縣市";
         districtSelect.appendChild(option);
-      });
-    } else {
-      const option = document.createElement("option");
-      option.textContent = "請先選擇縣市";
-      districtSelect.appendChild(option);
-    }
+      }
+    });
   });
 
+  function generateOptions(selectElement, start, end, padZero = true, step = 1) {
+    const defaultOption = document.createElement('option');
+    defaultOption.textContent = "--";
+    defaultOption.value = "";
+    selectElement.appendChild(defaultOption);
+
+    for (let i = start; i <= end; i += step) {
+        const option = document.createElement('option');
+        option.value = i < 10 && padZero ? '0' + i : i;
+        option.textContent = i < 10 && padZero ? '0' + i : i;
+        selectElement.appendChild(option);
+    }
+}
+
+// 自動生成小時
+['sleep-hour', 'wake-hour', 'nap-hour'].forEach(id => {
+    generateOptions(document.getElementById(id), 0, 23);
+});
+
+// 自動生成分鐘
+['sleep-minute', 'wake-minute', 'nap-minute'].forEach(id => {
+  generateOptions(document.getElementById(id), 0, 45, true, 15);
+});

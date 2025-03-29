@@ -1,180 +1,265 @@
-/* 設定導覽列 */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 15px 20px;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* ==========【導覽列】========== */
+
+.navbar, .navbar-top, .nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.navbar-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    
+.navbar {
+  padding: 15px 20px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
-    flex: 1;
-    text-align: left;
-    margin-left: 20px;
-    position: relative;
-    top: 5px;
-}
-a,
-a:visited,
-a:hover,
-a:active {
-  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
   color: black;
+  flex: 1;
+  text-align: left;
+  margin-left: 20px;
+  position: relative;
+  top: 5px;
 }
+
 .nav-list {
-    list-style: none;
-    display: flex;
-    position: relative;
-    top: 10px;
-    flex-wrap: wrap; /* 讓其中一項可以換行 */
-    justify-content: center;
+  list-style: none;
+  position: relative;
+  top: 10px;
+  justify-content: center;
 }
 
 .nav-list li {
-    margin: 0 15px;
-    white-space: nowrap;
+  margin: 0 15px;
+  white-space: nowrap;
 }
 
-
-
-.nav-list a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
+.nav-list a, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
 }
 
 .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: auto;
 }
 
 .menu-toggle .bar {
-    background-color: black;
-    height: 3px;
-    width: 25px;
-    margin: 4px 0;
+  background-color: black;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
 }
 
+/* ==========【背景】========== */
+
 body {
-    background-image: url('/Family/image/bg.png'); /* 根據你背景圖位置調整路徑 */
-    background-size: cover;       /* 讓背景圖自動撐滿整個區塊 */
-    background-position: center;  /* 讓圖片置中 */
-    background-repeat: no-repeat; /* 不要重複出現 */
-    min-height: 320vh;            /* 至少畫面高度要滿一整頁 */
-  }
+  background-image: url('/Family/image/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
 
-  .form-wrapper {
-    max-width: 900px;
-    margin: 40px auto; /* 整體置中 */
-    padding: 5px 20px;
-  }
+/* ==========【表單】========== */
 
-  .form-title {
-    font-size: 30px;
-    margin-bottom: 20px;
-    text-align: left; /* 靠左 */
-  }
+.wrapper-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px 20px;
   
-  .form-area {
-    margin-top: 40px;
+}
+
+.emergency-contact-wrapper {
+  display: flex;
+  flex-direction: column;  
+  gap: 50px; 
+  max-width: 42%;
+  margin: 10px auto ;
+  
+}
+
+/* 左側主要表單區塊 */
+.form-wrapper {
+  max-width: 55%;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 15px;                       
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   
+  float: left;                               
+  clear: both;                               
+  margin-bottom: 10px;                       
+            
+}
+
+/* 緊急聯絡人表單區塊，靠右 */
+.form-wrapper1,
+.form-wrapper2 {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 15px;                       
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);   
+    float: left;                               
+    clear: both;                               
+    margin-bottom: 10px;
+}
+
+
+.form-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-area {
+  display: grid;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 1px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========【表單元素】========== */
+
+.form-group {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.form-group label {
+  width: 60px;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+
+/* 擴充版面用 */
+.form-full {
+  grid-column: 1 / -1;
+}
+
+.form-full input[type="text"] {
+  width: 100%;
+  max-width: 600px;
+}
+
+.small-input {
+  width: 100px!important;
+  box-sizing: border-box;
+}
+
+.small-input1 {
+  width: 120px!important;
+  box-sizing: border-box;
+}
+
+span {
+  margin-left: 3px;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px 5px;
+  align-items: center;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+  align-items: center;
+}
+
+.checkbox-group label {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.checkbox-group input[type="text"],
+.other-input {
+  width: 80px;
+  padding: 2px;
+  font-size: 1rem;
+  height: auto;
+  margin-left: 5px;
+}
+
+.address-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  width: 60%;
+}
+
+/* ==========【表單分組】========== */
+
+
+.form-row-basic,
+.form-row-physical {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px 1px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .form-group {
-    display: flex;
-    gap: 2px;
+    grid-template-columns: 200px 1fr 200px 1fr; /* 4格，左右固定比例 */
+    gap: 20px;
     align-items: center;
-  }
-  
-  .form-group label {
-    width: 60px;
-    margin-right: 10px;
-    white-space: nowrap;
-  }
-  
-  input[type="text"] {
-    flex: 1;
     width: 100%;
-    max-width: 165px;
-  }
-  
-  .radio-group {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 20px 5px;
-    align-items: center;
-  }
-  
-  .form-full {
-    grid-column: 1 / -1; /* 橫跨整欄，寬度變寬 */
-  }
+}
 
-  .form-full input[type="text"] {
-    width: 80%;
-    max-width: 600px; 
-  }
-  
-  .checkbox-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px 40px;
-    align-items: center;
-  }
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
 
-  .checkbox-group label {
-    display: inline-flex; 
-    align-items: center;
-    white-space: nowrap;
-  }
+.form-row label {
+  width: 50px;
+}
 
-  .checkbox-group input[type="text"] {
-    width: 80px;
-    padding: 2px;
-    font-size: 1rem;
-    height: auto;
-  }
 
-  
-  .other-input {
-    width: 80px !important;
-    padding: 2px;
-    font-size: 1rem;
-    height: auto;
-    margin-left: 5px;
-  }
+/* ==========【睡眠時間區塊】========== */
 
-  .address-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-  }
+#sleep-wake-time {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
   
-  .address-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-    width: 60%;
+}
+
+.time-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.time-row label {
+  width: 100px;
+}
+
+/* ==========【RWD】========== */
+
+@media (max-width: 768px) {
+  .wrapper-container {
+      flex-direction: column;
   }
-  
+  .form-wrapper,
+  .emergency-contact-wrapper {
+      flex: 1 1 100%;
+      max-width: 100%;
+  }
+}
