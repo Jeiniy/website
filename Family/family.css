@@ -1,16 +1,21 @@
 /* ==========【導覽列】========== */
 
-.navbar, .navbar-top, .nav-list {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.navbar {
   padding: 15px 20px;
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  
 }
 
 .logo {
@@ -26,8 +31,10 @@
 
 .nav-list {
   list-style: none;
+  display: flex;
   position: relative;
   top: 10px;
+  flex-wrap: wrap; /* 讓其中一項可以換行 */
   justify-content: center;
 }
 
@@ -36,7 +43,9 @@
   white-space: nowrap;
 }
 
-.nav-list a, a:visited, a:hover, a:active {
+
+
+.nav-list a {
   text-decoration: none;
   color: black;
   font-size: 16px;
@@ -46,7 +55,7 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  margin-right: auto;
+  margin-left: 10px;
 }
 
 .menu-toggle .bar {
@@ -56,7 +65,98 @@
   margin: 4px 0;
 }
 
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 999;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.side-menu {
+  position: absolute;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background: white;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: left 0.3s ease;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+}
+
+.overlay.active .side-menu {
+  left: 0;
+}
+
+.menu-header h2 {
+  margin: 50;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  flex: 1;
+  margin-left: 8px;
+  position: relative;
+  top: 8px;
+}
+
+.menu-header hr {
+  margin-top: 20px;
+  margin-bottom: 16px;
+  border: none;
+  border-top: 2px solid #484848;
+}
+
+.menu-list img {
+  width: 20px;       
+  vertical-align: middle;  
+  margin-right: 8px; 
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  flex-grow: 1;
+}
+
+.menu-list li {
+  margin: 15px 0;
+}
+
+.menu-list a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.menu-footer {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.menu-footer a {
+  text-decoration: none;
+  color: #3f3f3f;
+  font-weight: bold;
+  font-size: 16px;
+
+}
+
+
 /* ==========【背景】========== */
+
+
 
 body {
   background-image: url('/Family/image/bg.png');
@@ -64,6 +164,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* ==========【表單】========== */
@@ -104,7 +205,7 @@ body {
 /* 緊急聯絡人表單區塊，靠右 */
 .form-wrapper1,
 .form-wrapper2 {
-    padding: 10px 20px;
+    padding: 15px 20px;
     background-color: rgba(255, 255, 255, 0.8); 
     border-radius: 15px;                       
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);   
@@ -135,9 +236,11 @@ body {
 
 .form-group {
   display: flex;
-  gap: 2px;
+  gap: 3px;
   align-items: center;
 }
+
+
 
 .form-group label {
   width: 60px;
@@ -145,6 +248,55 @@ body {
   white-space: nowrap;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.save-button {
+  width: 100px;
+  height: 50px;
+  border-radius: 20px; /* 方圓形 */
+  background-color: #efe7dc;
+  color: rgb(108, 107, 107);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.save-button:hover {
+  background-color: #dec9a9;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.save-button:active {
+  transform: scale(0.95);
+}
+.save-button-wrapper {
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+
+  
+}
+.required-label::before {
+  content: '*';
+  color: red;
+  margin-right: 2px;
+}
+.toast {
+          position: fixed;
+          bottom: 30px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(220, 53, 69, 0.9);
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+          display: none;
+          z-index: 1000;
+      }
 
 /* 擴充版面用 */
 .form-full {
@@ -154,6 +306,14 @@ body {
 .form-full input[type="text"] {
   width: 100%;
   max-width: 600px;
+}
+
+.form-group1.form-full {
+  display: block;
+  margin-bottom: 20px;   /* 調整你喜歡的間隔 */
+}
+.form-group1.form-full > div {
+  margin-top: 5px;
 }
 
 .small-input {
@@ -250,6 +410,10 @@ span {
 .time-row label {
   width: 100px;
 }
+
+
+
+
 
 /* ==========【RWD】========== */
 

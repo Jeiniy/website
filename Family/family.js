@@ -66,6 +66,8 @@ menuToggle.addEventListener("click", function () {
     });
   });
 
+
+
   function generateOptions(selectElement, start, end, padZero = true, step = 1) {
     const defaultOption = document.createElement('option');
     defaultOption.textContent = "--";
@@ -89,3 +91,80 @@ menuToggle.addEventListener("click", function () {
 ['sleep-minute', 'wake-minute', 'nap-minute'].forEach(id => {
   generateOptions(document.getElementById(id), 0, 45, true, 15);
 });
+
+
+function checkForm() {
+  // 取老人家表單
+  const elderForm = document.getElementById('form-elder');
+  const contactForm = document.getElementById('form-contact1');
+
+  let messages = [];
+
+  // -------- 老人資訊 --------
+  const elderName = elderForm.querySelector('input[type="text"]').value.trim();
+  const gender = elderForm.querySelector('input[name="gender"]:checked');
+  const height = elderForm.querySelector('#height').value.trim();
+  const weight = elderForm.querySelector('#weight').value.trim();
+  const county = elderForm.querySelector('#county').value;
+  const district = elderForm.querySelector('#district').value;
+  const address = elderForm.querySelector('input[name="detailAddress"]').value.trim();
+
+  // 慢性病
+  const diseaseChecked = elderForm.querySelectorAll('input[name="disease"]:checked');
+  // 用藥狀況
+  const medicationChecked = elderForm.querySelectorAll('input[name="medication"]:checked');
+  // 睡眠習慣
+  const sleepHour = elderForm.querySelector('#sleep-hour').value;
+  const sleepMinute = elderForm.querySelector('#sleep-minute').value;
+  const wakeHour = elderForm.querySelector('#wake-hour').value;
+  const wakeMinute = elderForm.querySelector('#wake-minute').value;
+  // 興趣
+  const interestChecked = elderForm.querySelectorAll('input[name="interest"]:checked');
+
+  if (elderName === "") messages.push("請填寫【老人姓名】");
+  if (!gender) messages.push("請選擇【老人性別】");
+  if (height === "") messages.push("請填寫【老人身高】");
+  if (weight === "") messages.push("請填寫【老人體重】");
+  if (county === "" || district === "" || address === "") messages.push("請完整填寫【老人地址】");
+  if (diseaseChecked.length === 0) messages.push("請至少勾選【慢性病】");
+  if (medicationChecked.length === 0) messages.push("請至少勾選【用藥狀況】");
+  if (sleepHour === "" || sleepMinute === "" || wakeHour === "" || wakeMinute === "") messages.push("請完整填寫【睡眠習慣】");
+  if (interestChecked.length === 0) messages.push("請至少勾選【興趣】");
+
+  // -------- 緊急聯絡人1 --------
+  const contactName = contactForm.querySelector('input[type="text1"]').value.trim();
+  const contactPhone = contactForm.querySelectorAll('input[type="text1"]')[1].value.trim();
+  const county1 = contactForm.querySelector('#county1').value;
+  const district1 = contactForm.querySelector('#district1').value;
+  const address1 = contactForm.querySelector('input[name="detailAddress"]').value.trim();
+  const relationship = contactForm.querySelector('#relationship').value;
+
+  if (contactName === "") messages.push("請填寫【聯絡人1姓名】");
+  if (contactPhone === "") messages.push("請填寫【聯絡人1電話】");
+  if (county1 === "" || district1 === "" || address1 === "") messages.push("請完整填寫【聯絡人1地址】");
+  if (relationship === "" || relationship === null) messages.push("請選擇【聯絡人1身分】");
+
+  // --------- 彈出提示 ---------
+  if (messages.length > 0) {
+    alert(messages.join("\n"));
+} else {
+    alert("儲存完成～");
+    // 在這裡如果要送出資料可以加 form.submit() 或其他動作
+    // elderForm.submit();
+}
+}
+
+const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('overlay');
+
+    // 開啟選單
+    mobileMenu.addEventListener('click', () => {
+        overlay.classList.add('active');
+    });
+
+    // 點擊 overlay 關閉選單
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) { // 只點到背景才關閉
+            overlay.classList.remove('active');
+        }
+    });
