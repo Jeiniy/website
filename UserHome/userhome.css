@@ -35,42 +35,123 @@
     top: 10px;
     flex-wrap: wrap; /* 讓其中一項可以換行 */
     justify-content: center;
-}
-
-.nav-list li {
+  }
+  
+  .nav-list li {
     margin: 0 15px;
     white-space: nowrap;
-}
-
-
-
-.nav-list a {
+  }
+  
+  
+  
+  .nav-list a {
     text-decoration: none;
     color: black;
     font-size: 16px;
-}
-
-.menu-toggle {
+  }
+  
+  .menu-toggle {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    margin-right: auto;
-}
-
-.menu-toggle .bar {
+    margin-left: 10px;
+  }
+  
+  .menu-toggle .bar {
     background-color: black;
     height: 3px;
     width: 25px;
     margin: 4px 0;
-}
+  }
+  
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 999;
+  }
+  
+  .overlay.active {
+    display: block;
+  }
+  
+  .side-menu {
+    position: absolute;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: left 0.3s ease;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+  }
+  
+  .overlay.active .side-menu {
+    left: 0;
+  }
+  
+  .menu-header h2 {
+    margin: 50;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    flex: 1;
+    margin-left: 8px;
+    position: relative;
+    top: 8px;
+  }
+  
+  .menu-header hr {
+    margin-top: 20px;
+    margin-bottom: 16px;
+    border: none;
+    border-top: 2px solid #484848;
+  }
+  
+  .menu-list img {
+    width: 20px;       
+    vertical-align: middle;  
+    margin-right: 8px; 
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    flex-grow: 1;
+  }
+  
+  .menu-list li {
+    margin: 15px 0;
+  }
+  
+  .menu-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .menu-footer {
+    text-align: right;
+    margin-top: 10px;
+  }
+  
+  .menu-footer a {
+    text-decoration: none;
+    color: #3f3f3f;
+    font-weight: bold;
+    font-size: 16px;
+  
+  }
 
-a,
-a:visited,
-a:hover,
-a:active {
-  text-decoration: none;
-  color: black;
-}
 
 body {
     background-image: url('/UserHome/image/bg.png'); /* 根據你背景圖位置調整路徑 */
