@@ -151,3 +151,30 @@ body {
     background-color: #935b39;
 }
 
+/* ========== RWD 小於 768px 手機和平板 ========== */
+@media (max-width: 768px) {
+
+    .form-container {
+        width: 90%;
+        margin: 50px auto;
+        padding: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;   /* ← 變成上下排 */
+        align-items: flex-start;
+    }
+
+    .form-row label {
+        width: auto;  /* ← 不固定寬度 */
+        margin-bottom: 5px;
+    }
+
+    .form-row input {
+        width: 100%;
+    }
+
+    .btn-group {
+        justify-content: center;
+    }
+}
