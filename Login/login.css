@@ -150,4 +150,20 @@ body {
     background-color: #ae6c45;
     color: white;
   }
-  
+
+
+  /* ==========【RWD】========== */
+  @media (max-width: 768px) {
+    .login-box {
+       width: 80%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+    }
+    .input-box {
+       width: 100%;
+    }
+    .btn-group {
+       width: 100%;
+    }
+ }
+ 
