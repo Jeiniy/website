@@ -76,53 +76,58 @@ body {
 
 
 
+/* ========== 註冊表單區塊 ========== */
 
 /* 表單區塊置中靠左 */
 .form-container {
-    width: 400px;
-    margin-top: 200px;
-    margin-left: 150px; 
+    width: 500px;
+    margin-top: 100px;
+    margin-left: 100px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 標題 */
+.form-container h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
 }
 
 /* 欄位 */
 .form-row {
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
+/* 姓名、電話、電子郵件、密碼、確認密碼 */
 .form-row label {
     width: 100px;
-    font-size: 20px;
+    font-size: 18px;
     color: #333;
-    margin-right: 10px;
-    text-align: right;
+    margin-right: 5px;
+    text-align: left;
 }
 
-/* 輸入底線 */
+/* 輸入框 */
 .form-row input {
     flex: 1;
-    border: none;
-    border-bottom: 2px solid #555;
-    background-color: transparent;
-    outline: none;
-    font-size: 18px;
-    padding: 5px 0;
-    color: #333;
-    border-radius: 0;
-    box-shadow: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-size: 16px;
+    background-color: white;
 }
 
-.form-row input::placeholder {
-    color: #aaa;
-}
 
 /* 註冊按鈕區 */
 .btn-group {
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
-    width: 100%;
+    width: 70%;
 }
 
 
