@@ -1,0 +1,228 @@
+/* 設定導覽列 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    flex: 1;
+    text-align: left;
+    margin-left: 20px;
+    position: relative;
+    top: 5px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    position: relative;
+    top: 10px;
+    flex-wrap: wrap; /* 讓其中一項可以換行 */
+    justify-content: center;
+}
+
+.nav-list li {
+    margin: 0 15px;
+    white-space: nowrap;
+}
+
+
+
+.nav-list a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.menu-toggle .bar {
+    background-color: black;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+
+    .logo {
+        text-align: center;
+        flex: 100%;
+        margin: 10px 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .nav-list li {
+        margin: 8px 0;
+    }
+}
+
+/* 輪播圖響應式設定 */
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-image: url('image/index.bg1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: auto;
+        object-fit: contain;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-list {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .nav-list li {
+        margin: 0 10px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+
+/* 響應式左右併排（所有裝置適用） */
+.row-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.info-box, .info-box2{
+    flex: 1;
+    min-width: 300px;
+    max-width: 48%;
+    background-color: #f4eadd;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    line-height: 1.8;
+}
+
+.info-box3 {
+    padding: 24px;                /* 內距 */
+    border-radius: 12px;          /* 圓角 */
+    width: 80%;                   /* 寬度 */
+    max-width: 800px;             /* 最大寬度限制 */
+    margin: 0 auto 32px auto;     /* 垂直空間 + 水平置中 */
+    line-height: 1.8;             /* 行距 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* 微陰影提升質感 */
+  }
+
+.info-box2 {
+    background-color: #e5e3e3;
+}
+.info-box3 {
+    background-color: #dadbd6;
+}
+
+.info-box h2, .info-box2 h2, .info-box3 h2{
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.info-box h2::after, .info-box2 h2::after,.info-box3 h2::after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 2px;
+    background-color: #888;
+    margin: 8px auto 0 auto;
+    border-radius: 1px;
+}
+
+.center-table {
+    margin: 0 auto;       /* 水平置中 */
+    border-collapse: collapse;
+  }
+
+/* RWD：小螢幕時變上下排 */
+@media (max-width: 768px) {
+    .info-box, .info-box2 {
+        max-width: 100%;
+    }
+}
+
+/* 通用圖片響應式處理 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.site-footer {
+    background-color: #6b6b6b;
+    color: #fff;
+    padding: 24px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.site-footer a {
+    color: #a8d0ff;
+    text-decoration: none;
+}
