@@ -131,13 +131,16 @@ body {
 
   /* 按鈕的外觀 */
   .btn {
-    width: 120px;
-    padding: 12px 0;
+    min-width: 120px;   /* 保底寬度 */
+    width: 45%;
+    padding: 12px 20px;
     border: none;
     border-radius: 999px !important;
     font-size: 16px;
     cursor: pointer;
   }
+
+
   
   
   /* 註冊按鈕顏色 */
@@ -149,6 +152,13 @@ body {
   .btn.login {
     background-color: #ae6c45;
     color: white;
+  }
+
+  .btn.register:hover {
+    background-color: #935b39;
+  }
+  .btn.login:hover {
+  background-color: #935b39;
   }
 
 
@@ -165,5 +175,8 @@ body {
     .btn-group {
        width: 100%;
     }
+    .btn {
+      width: 45%;  /* ✅ 響應式下讓兩顆按鈕平均 */
+   }
  }
  
