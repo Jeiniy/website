@@ -1,0 +1,363 @@
+/* ==========【導覽頁】========== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    flex: 1;
+    text-align: left;
+    margin-left: 20px;
+    position: relative;
+    top: 5px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    position: relative;
+    top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-list li {
+    margin: 0 15px;
+    white-space: nowrap;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+/* ==========【漢堡選單】========== */
+/* --- 按鈕 --- */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.menu-toggle .bar {
+    background-color: black;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+}
+
+/* --- Overlay --- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* --- Side-Menu --- */
+.side-menu {
+    position: absolute;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: left 0.3s ease;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+}
+
+.overlay.active .side-menu {
+    left: 0;
+}
+
+/* --- Side-Menu Header --- */
+.menu-header h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-left: 8px;
+    position: relative;
+    top: 8px;
+}
+
+.menu-header hr {
+    margin-top: 20px;
+    margin-bottom: 16px;
+    border: none;
+    border-top: 2px solid #484848;
+}
+
+/* --- Side-Menu List --- */
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    flex-grow: 1;
+}
+
+.menu-list li {
+    margin: 15px 0;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+  }
+
+.menu-list img {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* --- Side-Menu Footer --- */
+.menu-footer {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.menu-footer a {
+    text-decoration: none;
+    color: #3f3f3f;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* ==========【背景】========== */
+body {
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+
+/* ==========【頁尾】========== */
+.site-footer {
+    background-color: #6b6b6b;
+    color: #fff;
+    padding: 24px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.site-footer a {
+    color: #a8d0ff;
+    text-decoration: none;
+}
+
+/* -------------------- 關於我們 -------------------- */
+.concept {
+    display: flex;
+    background: #ffffff;
+    padding: 70px;
+    border-radius: 20px;
+
+    width: 100%;         
+    max-width: 1400px;  
+    margin: 0 auto;     
+    box-sizing: border-box;  
+}
+.text-area {
+    width: 50%;
+    padding-right: 30px;
+}
+
+.text-area h1 {
+    font-size: 100px;
+    color: #8094a0;
+    opacity: 0.2;
+}
+
+.text-area h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.text-area p {
+    font-size: 20px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.view-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: #a67c52;
+    text-decoration: none;
+    border-bottom: 1px solid #a67c52;
+}
+
+.image-wrap {
+    position: relative;
+    width: 40%;
+    padding: 20px;
+    transform: translateX(80px); 
+}
+
+.bg-block1 {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    width: 320px;
+    height: 220px;
+    background: #5e8da4;
+    border-radius: 12px;
+    z-index: 1;
+    transform: translate(80%, -10%);
+}
+
+.bg-block2 {
+    position: absolute;
+    top: 300px;
+    left: -1200px;
+    width: 320px;
+    height: 220px;
+    background: #6d6d6d;
+    border-radius: 12px;
+    z-index: 1;
+    transform: translate(50%, -10%);
+}
+
+.image-wrap img {
+    position: relative;
+    width: 500px;
+    border-radius: 8px;
+    z-index: 2;
+    top: 50px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.view-more {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 20px;
+    color: #a67c52;
+    text-decoration: none;
+    font-weight: 500;
+    gap: 10px; /* 文字和圓圈距離 */
+}
+
+.circle-arrow {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #a67c52;   
+    color: #fff;  
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.view-more:hover .circle-arrow {
+    transform: scale(1.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.bg-block {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    width: 320px;
+    height: 220px;
+    background: #efe7dc;
+    border-radius: 12px;
+    z-index: 1;
+    transform: translate(80%, -20%);
+}
+
+.custom-hr {
+    width: 95%;         
+    margin: 40px auto;  
+    border: none;       
+    border-top: 2px solid #ccc;  
+  }
+
+/* -------------------- 目的 -------------------- */
+
+.section-box {
+    position: relative;
+    border: 2px solid #5e8da4;
+    border-radius: 16px;
+    padding: 40px 24px 24px 24px;
+    margin: 60px auto;
+    max-width: 85%;
+    background-color: #ffffff;
+    
+  }
+  
+  .section-title {
+    position: absolute;
+    top: -30px;
+    left: 50px;
+    background-color: #5e8da4;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  
+  .section-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .bullet-list {
+    list-style-type: disc;
+    padding-left: 100px;
+    font-size: 25px;
+    color: #333;
+    line-height: 2;
+    flex: 1;
+    min-width: 280px;
+  }
+  
+  .section-image {
+    width: 300px;
+    flex-shrink: 0;
+    padding-left: 10px;
+  }
+  
+
